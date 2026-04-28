@@ -5,7 +5,7 @@ import {
   updateApplication,
   deleteApplication,
 } from "../services/applicationService";
-import "../styles/dashboard.css";
+import "../styles/Dashboard.css";
 
 export default function Dashboard() {
   const token = localStorage.getItem("token");
