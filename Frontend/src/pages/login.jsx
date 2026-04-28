@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/login.css";
 import Signup from "./signup";
+import API_URL from "../api"; 
 
 
 export default function Login({ setLoggedIn }) {
@@ -12,7 +13,7 @@ export default function Login({ setLoggedIn }) {
   const handleLogin = async () => {
     console.log("LOGIN CLICKED");
 
-    const res = await fetch("https://internship-placement-tracker.vercel.app/api/auth/login", {
+    const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

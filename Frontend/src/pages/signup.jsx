@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/signup.css";
+import API_URL from "../api";
 
 
 export default function Signup({ setShowSignup }) {
@@ -13,7 +14,7 @@ export default function Signup({ setShowSignup }) {
         setError("");
 
         try {
-            const res = await fetch("https://internship-placement-tracker.vercel.app/api/auth/register", {
+            const res = await fetch(`${API_URL}/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
