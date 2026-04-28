@@ -12,7 +12,7 @@ export default function Login({ setLoggedIn }) {
   const handleLogin = async () => {
     console.log("LOGIN CLICKED");
 
-    const res = await fetch("http://localhost:3000/api/auth/login", {
+    const res = await fetch("https://internship-placement-tracker.vercel.app/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

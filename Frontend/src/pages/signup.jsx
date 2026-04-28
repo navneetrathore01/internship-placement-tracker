@@ -13,7 +13,7 @@ export default function Signup({ setShowSignup }) {
         setError("");
 
         try {
-            const res = await fetch("http://localhost:3000/api/auth/register", {
+            const res = await fetch("https://internship-placement-tracker.vercel.app/api/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
