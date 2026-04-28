@@ -7,22 +7,26 @@ dotenv.config();
 
 const app = express();
 
-/* ✅ MongoDB connection — THIS WAS MISSING */
+/* MongoDB */
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-/* ✅ CORS — must be before routes */
+/* Middleware */
+app.use(express.json());
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: true,
+    credentials: true,
   })
 );
 
-app.use(express.json());
+/* Test Route */
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
 
 /* Routes */
 const authRoutes = require("./routes/authRoutes");
@@ -31,10 +35,12 @@ const applicationRoutes = require("./routes/applicationRoutes");
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
 
-const PORT = 3000;
+/* Local only */
+const PORT = process.env.PORT || 3000;
+
 if (process.env.NODE_ENV !== "production") {
-  app.listen(3000, () => {
-    console.log("Server running on port 3000");
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
   });
 }
 
