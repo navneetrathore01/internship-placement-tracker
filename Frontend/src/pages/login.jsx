@@ -57,15 +57,15 @@ export default function Login({ setLoggedIn }) {
         >
           Login
         </button>
+      </div>
 
-        <p>
+        <div className="login-card-footer">
           New user?{" "}
           <button onClick={() => setShowSignup(true)}>
             Create account
           </button>
-        </p>
+        </div>
 
-      </div>
 
     </main>
   );

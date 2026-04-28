@@ -24,7 +24,7 @@ export const getApplications = async (token) => {
 };
 
 export const updateApplication = async (id, status, token) => {
-  const res = await fetch(`/api/applications/${id}`, {
+  const res = await fetch(`${API_URL}/applications/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ return res.json();
 };
 
 export const deleteApplication = async (id, token) => {
-  await fetch(`/api/applications/${id}`, {
+  await fetch(`${API_URL}/applications/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

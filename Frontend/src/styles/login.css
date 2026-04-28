@@ -1,9 +1,8 @@
 .login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ede9fe;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
 .login-card {
@@ -20,11 +19,21 @@
   font-size: 26px;
 }
 
-.login-card p {
-  margin: 0 0 24px;
-  color: #475569;
+.login-card-footer {
+  margin-top: 14px;
+  text-align: center;
   font-size: 14px;
 }
+
+.login-card-footer button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+}
+
 
 .login-card input {
   width: 100%;
